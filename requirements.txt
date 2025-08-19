@@ -1,0 +1,12 @@
+flask==2.3.3
+ultralytics==8.0.145
+opencv-python-headless==4.8.0.76
+numpy==1.24.3
+pillow==10.0.0
+gunicorn==21.2.0
+torch==2.0.1  # CPU-only version (smaller)
+# Additional recommended dependencies
+werkzeug==2.3.7  # Flask dependency
+click==8.1.7  # Flask dependency
+packaging==23.1  # ultralytics dependency
+tqdm==4.65.0  # ultralytics dependency

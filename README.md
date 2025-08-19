@@ -1,0 +1,1 @@
+This project is a web-accessible system that detects and classifies Japanese and Chinese currency notes using the YOLO object detection model. Users can upload images of money, and the system will identify the currency type and highlight the detected notes in real-time.
