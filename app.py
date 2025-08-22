@@ -37,7 +37,7 @@ def index():
 
             # Find the saved image path
             saved_dir = Path(results[0].save_dir)  # Convert to Path object
-            detected_files = list(saved_dir.glob("*.jpg"))
+            detected_files = list(saved_dir.glob("*"))
 
             if detected_files:
                 detected_file = detected_files[0]

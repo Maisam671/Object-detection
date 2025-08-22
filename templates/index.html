@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Money Detector</title>
@@ -48,5 +48,136 @@
      <img src="{{ url_for('static', filename=results_img_path) }}" width="500">
     {% endif %}
 
+</body> -->
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Money Detector</title>
+  <style>
+    /* خلفية خيالية متدرجة */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #6dd5ed);
+      background-size: 300% 300%;
+      animation: gradientBG 10s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* صندوق زجاجي */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    form {
+      margin: 20px 0;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    label:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,75,43,0.4);
+    }
+
+    button {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(56,249,215,0.4);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 16px;
+      margin-top: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      animation: popIn 0.7s ease;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #fff;
+      font-size: 1.8rem;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💸 Money Detector 💸</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" id="file-upload" name="image" accept="image/*" required>
+      <label for="file-upload">📷 Choose an Image</label><br>
+      <button type="submit">🚀 Detect Money</button>
+    </form>
+
+    {% if results_img_path %}
+      <h2>✨ Detection Result ✨</h2>
+      <img src="{{ url_for('static', filename=results_img_path) }}" width="500">
+    {% endif %}
+  </div>
 </body>
 </html>
